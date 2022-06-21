@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 int main()
 {
@@ -8,5 +9,5 @@ std::string first_name;
 int age=8;
 // integer variable
 std::cin >> first_name >> age;
-std::cout << "Hello, " << first_name << " (age " << age << ")\n";
+std::cout << "Hello, " << first_name << " (age :" << sqrt(int(age)) << ")\n";
 }
