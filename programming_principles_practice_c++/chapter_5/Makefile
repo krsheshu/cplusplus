@@ -10,19 +10,21 @@ obj_files		:= $(patsubst ${SRCDIR}/%.cpp,${LIBDIR}/%.o,$(wildcard ${SRCDIR}/*.cp
 bin_files		:= $(patsubst ${SRCDIR}/%.cpp,${OUTDIR}/%,$(wildcard ${SRCDIR}/*.cpp))
 
 
+COMPILE_OPTIONS:= --std=c++11 -Wall
+
 .PHONY: all clean
 
 all: ${asm_files} ${obj_files} ${bin_files}
 
 ${ASMDIR}/%.s: ${SRCDIR}/%.cpp ${header_files} | ${ASMDIR}
-	g++ -S $< -o $@
+	c++ ${COMPILE_OPTIONS} -S $< -o $@
 
 ${LIBDIR}/%.o: ${ASMDIR}/%.s | ${LIBDIR}
-	g++ -c $< -o $@
+	c++ ${COMPILE_OPTIONS} -c $< -o $@
 
 ${OUTDIR}/%: ${LIBDIR}/%.o | ${OUTDIR}
 
-	g++ $< -o $@
+	c++ ${COMPILE_OPTIONS} $< -o $@
 
 ${OUTDIR}:
 	mkdir -p $@

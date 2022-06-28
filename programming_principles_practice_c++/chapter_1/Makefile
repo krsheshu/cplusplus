@@ -8,18 +8,20 @@ obj_files		:= $(patsubst ${SRCDIR}/%.cpp,${OUTDIR}/%.o,$(wildcard ${SRCDIR}/*.cp
 bin_file		:= ${OUTDIR}/run
 
 
+COMPILE_OPTIONS:= --std=c++11 -Wall
+
 .PHONY: all clean
 
 all: ${bin_file}
 
 ${asm_files}: ${src_files} ${header_files} | ${OUTDIR}
-	g++ -S $< -o $@
+	c++ ${COMPILE_OPTIONS} -S $< -o $@
 
 ${obj_files}: ${asm_files}
-	g++ -c $< -o $@
+	c++ ${COMPILE_OPTIONS} -c $< -o $@
 
 ${bin_file}: ${obj_files}
-	g++ $^ -o $@
+	c++ ${COMPILE_OPTIONS} $^ -o $@
 
 ${OUTDIR}:
 	mkdir -p $@
