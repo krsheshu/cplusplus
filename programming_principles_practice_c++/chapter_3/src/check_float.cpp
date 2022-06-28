@@ -1,4 +1,7 @@
-#include <iostream>
+//Copyright: Free
+//Author: krsheshu
+
+ #include <iostream>
 
 int main() {
   float a = 1.3f;

@@ -1,4 +1,7 @@
-#include <iostream>
+//Copyright: Free
+//Author: krsheshu
+
+ #include <iostream>
 
 int main() {
   std::cout << "Please enter your first name and second name\n";

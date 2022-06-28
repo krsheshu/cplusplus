@@ -1,4 +1,7 @@
-#include <iostream>
+//Copyright: Free
+//Author: krsheshu
+
+ #include <iostream>
 
 int main() {
   double d = 0;

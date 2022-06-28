@@ -1,5 +1,8 @@
 #include <cmath>
-#include <iostream>
+//Copyright: Free
+//Author: krsheshu
+
+ #include <iostream>
 
 int main() {
   std::string previous = " ", current;
