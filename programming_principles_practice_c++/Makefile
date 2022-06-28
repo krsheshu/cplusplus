@@ -4,9 +4,9 @@ SHELL := /bin/bash
 
 all:
 
-	( for dir in  */; do cd $${dir} && make all && cd -; done )
+	( for dir in  */; do make -C $${dir} all; done )
 
 
 clean:
 
-	( for dir in  */; do cd $${dir} && make clean && cd - ; done )
+	( for dir in  */; do make -C  $${dir} clean ; done )
