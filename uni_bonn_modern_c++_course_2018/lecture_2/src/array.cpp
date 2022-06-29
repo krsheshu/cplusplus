@@ -7,7 +7,7 @@
 
 template <typename myType>
 int print_contents(const myType a) {
-  for (auto i : a) {
+  for (const auto& i : a) {
     std::cout << i << " ";
   }
   std::cout << std::endl;

@@ -8,7 +8,7 @@
 //                      V
 int smallest_element(std::vector<int>& vec) {
   auto smallest_value = vec[0];
-  for (auto x : vec) {
+  for (const auto& x : vec) {
     if (x < smallest_value) {
       smallest_value = x;
     }
