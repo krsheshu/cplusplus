@@ -1,14 +1,16 @@
-// Copyright: NA
-// author: krsheshu
+// Copyright: Free
+// Author: krsheshu
 
-//Copyright: Free
-//Author: krsheshu
-
- #include <iostream>
+#include <iostream>
 #include <string>
 
 int main() {
-  cout << "Hello World\n";
-  keep_window_open();
+  const std::string hello = "Hello";
+  std::cout << "Type your name" << std::endl;
+
+  std::string name = "";
+  std::cin >> name;
+  std::cout << hello + ", " + name + "!" << std::endl;
+
   return 0;
 }
