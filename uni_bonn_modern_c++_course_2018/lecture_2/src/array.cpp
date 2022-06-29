@@ -6,7 +6,7 @@
 #include <iostream>
 
 template <typename myType>
-int print_contents(myType a) {
+int print_contents(const myType a) {
   for (auto i : a) {
     std::cout << i << " ";
   }
